@@ -1,9 +1,9 @@
-function countUniqueValues1(arr) {
+function countUniqueValues(arr) {
   const set = new Set(arr);
   return set.size;
 }
 
-function countUniqueValues2(arr) {
+function countUniqueValues(arr) {
   const length = arr.length;
   if (length < 2) return length;
 
@@ -22,7 +22,7 @@ function countUniqueValues2(arr) {
   return count;
 }
 
-function countUniqueValues3(arr) {
+function countUniqueValues(arr) {
   const length = arr.length;
   if (length < 2) return length;
 

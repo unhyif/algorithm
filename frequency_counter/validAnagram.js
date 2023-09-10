@@ -1,5 +1,5 @@
 // O(n log n)
-function validAnagram1(str1, str2) {
+function validAnagram(str1, str2) {
   str1 = str1.split("");
   str2 = str2.split("");
   str1.sort();
@@ -8,7 +8,7 @@ function validAnagram1(str1, str2) {
 }
 
 // O(n)
-function validAnagram2(str1, str2) {
+function validAnagram(str1, str2) {
   if (str1.length !== str2.length) return false;
   const count = {};
 
