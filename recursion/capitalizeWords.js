@@ -1,11 +1,9 @@
-function capitalizeFirst(arr) {
+function capitalizeWords(arr) {
   const result = [];
 
   function recursive(input) {
     if (input.length === 0) return result;
-    const firstElement = input[0];
-    const word = firstElement[0].toUpperCase() + firstElement.slice(1);
-    result.push(word);
+    result.push(input[0].toUpperCase());
     return recursive(input.slice(1));
   }
 
