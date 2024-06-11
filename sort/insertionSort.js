@@ -6,6 +6,7 @@ function insertionSort(arr) {
     for (j = i - 1; 0 <= j && currentValue < arr[j]; j--) {
       arr[j + 1] = arr[j];
     }
+
     arr[j + 1] = currentValue;
   }
 
