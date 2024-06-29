@@ -80,4 +80,24 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    let node = this.head;
+
+    for (let i = 0; i < index; i++) {
+      node = node.next;
+    }
+
+    return node;
+  }
+
+  set(index, value) {
+    const node = this.get(index);
+    if (!node) return false;
+
+    node.value = value;
+    return true;
+  }
 }
