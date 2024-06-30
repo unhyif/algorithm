@@ -100,4 +100,35 @@ class SinglyLinkedList {
     node.value = value;
     return true;
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === 0) {
+      this.unshift(value);
+    } else if (index === this.length) {
+      this.push(value);
+    } else {
+      const prevNode = this.get(index - 1);
+      const newNode = new Node(value);
+      newNode.next = prevNode.next;
+      prevNode.next = newNode;
+    }
+
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const prevNode = this.get(index - 1);
+    const currentNode = prevNode.next;
+    prevNode.next = currentNode.next;
+
+    this.length--;
+    return currentNode;
+  }
 }
