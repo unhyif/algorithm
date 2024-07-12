@@ -102,18 +102,14 @@ class SinglyLinkedList {
   }
 
   insert(index, value) {
-    if (index < 0 || index > this.length) {
-      return false;
-    } else if (index === 0) {
-      this.unshift(value);
-    } else if (index === this.length) {
-      this.push(value);
-    } else {
-      const prevNode = this.get(index - 1);
-      const newNode = new Node(value);
-      newNode.next = prevNode.next;
-      prevNode.next = newNode;
-    }
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return !!this.unshift(value);
+    if (index === this.length) return !!this.push(value);
+
+    const prevNode = this.get(index - 1);
+    const newNode = new Node(value);
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
 
     this.length++;
     return true;
