@@ -148,4 +148,21 @@ class DoublyLinkedList {
     this.length--;
     return node;
   }
+
+  reverse() {
+    let currentNode = this.head;
+    let prevNode = null;
+
+    this.head = this.tail;
+    this.tail = currentNode;
+
+    while (currentNode) {
+      currentNode.prev = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = currentNode.prev;
+    }
+
+    return this;
+  }
 }
